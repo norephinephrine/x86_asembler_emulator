@@ -1,0 +1,30 @@
+.global a,c,d
+.extern b
+.section text
+
+jmp *l(%pc)
+
+jmp *a(%pc)
+jmp *e(%pc)
+jmp *b(%pc)
+jmp *d(%pc)
+
+.equ f,t
+.equ t,f
+
+d:.word d
+mov %r1,b
+mov c,%r1
+mov %r1,e
+
+.section data
+.skip 8
+e:.equ h,a-e+d
+.word h
+.word c
+.word bss
+a:.word b
+.section bss
+c:.skip 8
+.equ l,3
+.end

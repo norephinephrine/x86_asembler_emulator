@@ -1,0 +1,40 @@
+#tabela simbola
+#ime                sek                   vr  vid    r.b.         size
+                 UND                 UND     0   l       0            0
+                text                text     0   l       5            8
+                data                data     0   l       6            6
+                 bss                 bss     0   l       7            4
+                   a                text     2   g       1
+                   b                 bss     1   g       2
+                   c                data     4   g       3
+                   e                 UND     0   g       4
+============================================================================================
+Offsets
+#ret.UND
+#offset		tip			vr
+
+#ret.text
+#offset		tip			vr
+0000		R_386_16		4
+
+#ret.data
+#offset		tip			vr
+
+#ret.bss
+#offset		tip			vr
+
+============================================================================================
+Bytes
+#UND
+
+
+#text
+00 00 00 00 	00 00 00 00 	
+
+#data
+00 00 00 00 	00 00 
+
+#bss
+00 00 00 00 	
+
+============================================================================================

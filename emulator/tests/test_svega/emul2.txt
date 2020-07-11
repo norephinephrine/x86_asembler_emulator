@@ -1,0 +1,17 @@
+
+.global c
+
+.section program
+l:
+mov $2000,%r6
+add $2,%r0
+xchg %r0,65296
+or 	$1,65296
+mov $1,13000
+
+mov h(%pc),%r3
+sub 3384,%r3
+mov $65278,%r0
+mov $c,12000
+c:
+.equ h,l-3384

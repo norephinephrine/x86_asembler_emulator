@@ -1,0 +1,80 @@
+
+.extern ispis
+.section test
+
+mov $4,%r0
+xchg %r1,%r0
+
+push %r1
+popb %r1h
+
+movb %r1h,%r3l
+
+
+call ispis
+add $1,%r3
+
+
+sub $2,%r3
+a:add $4,%r3
+cmp $7,%r3
+jgt b
+jne a
+b:
+
+mov $65278,%r0
+add $1,%r3
+call ispis
+
+
+jmp c
+e:sub $1,%r3
+c:test $10,%r3
+jeq e
+
+mov $10,23000
+mov $5,23002
+
+mul num_23,%r3
+
+
+sub num_232,num_23
+div num_232,%r3
+
+add $1,%r3 
+call ispis
+
+
+shl $3,%r3
+shr %r3,$2
+
+add $1,%r3 
+call ispis
+
+not %r3,%r3
+
+
+add $1,%r3 
+call ispis
+
+not %r3,%r3
+
+or $1,%r3
+
+add $1,%r3 
+call ispis
+
+and $40,%r3
+
+add $1,%r3 
+call ispis
+
+xor $9,%r3
+
+
+add $1,%r3 
+call ispis
+
+iret
+.equ num_23,23000
+.equ num_232,23002

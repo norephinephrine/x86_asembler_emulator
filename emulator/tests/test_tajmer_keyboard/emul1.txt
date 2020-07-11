@@ -1,0 +1,77 @@
+
+
+.equ a,16384
+
+.equ b,100
+.equ e,b+100
+.equ o,e+100
+
+
+.section ivt
+.word a
+.word o
+.word b
+.word e
+
+
+.section timer
+
+mov $10,65280
+mov $116,65280
+mov $105,65280
+mov $99,65280
+mov $107,65280
+mov $10,65280
+iret
+
+
+.section keyboard
+
+
+mov 65282,65280
+
+
+cmp $101,65282
+jne skok1
+mov $0,%r4
+skok1:
+
+cmp $117,65282
+jne skok2
+add $1,65296
+skok2:
+
+cmp $100,65282
+jne skok3
+sub $1,65296
+skok3:
+
+iret
+
+
+.section error
+
+mov $10,65280
+mov $71,65280
+mov $82,65280
+mov $69,65280
+mov $83,65280
+mov $75,65280
+mov $65,65280
+mov $10,65280
+
+halt
+iret
+
+
+
+.section program
+
+mov $2000,%r6
+mov $1,%r4
+
+vrati:cmp $0,%r4
+jne vrati
+
+halt
+

@@ -1,0 +1,56 @@
+#tabela simbola
+#ime                sek                   vr  vid    r.b.         size
+                 UND                 UND     0   l       0            0
+                 ivt                 ivt     0   l       8            a
+               timer               timer     0   l       9           2b
+            keyboard            keyboard     0   l       a            8
+               error               error     0   l       b           3a
+             program             program     0   l       c           12
+                   c                 UND     0   g       1
+               ispis                 UND     0   g       2
+============================================================================================
+Offsets
+#ret.UND
+#offset		tip			vr
+
+#ret.ivt
+#offset		tip			vr
+
+#ret.timer
+#offset		tip			vr
+
+#ret.keyboard
+#offset		tip			vr
+
+#ret.error
+#offset		tip			vr
+
+#ret.program
+#offset		tip			vr
+0002		R_386_16		2
+
+============================================================================================
+Bytes
+#UND
+
+
+#ivt
+00 40 2c 01 	64 00 c8 00 	f4 01 
+
+#timer
+64 00 0a 00 	80 00 ff 64 	00 74 00 80 	00 ff 64 00 	69 00 80 00 	
+ff 64 00 63 	00 80 00 ff 	64 00 6b 00 	80 00 ff 64 	00 0a 00 80 	
+00 ff 08 
+
+#keyboard
+64 80 02 ff 	80 00 ff 08 	
+
+#error
+64 00 0a 00 	80 00 ff 64 	00 47 00 80 	00 ff 64 00 	52 00 80 00 	
+ff 64 00 45 	00 80 00 ff 	64 00 53 00 	80 00 ff 64 	00 4b 00 80 	
+00 ff 64 00 	41 00 80 00 	ff 64 00 0a 	00 80 00 ff 	00 08 
+
+#program
+24 00 00 00 	8c 00 00 00 	26 44 80 e0 	2e 1c 00 04 	00 00 
+
+============================================================================================

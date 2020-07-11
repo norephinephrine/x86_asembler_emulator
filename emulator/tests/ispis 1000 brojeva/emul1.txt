@@ -1,0 +1,62 @@
+
+.extern c
+.extern ispis
+.equ a,16384
+
+.equ b,100
+.equ e,b+100
+.equ o,e+100
+
+
+.section ivt
+.word a
+.word o
+.word b
+.word e
+
+
+.section timer
+
+mov $10,65280
+mov $116,65280
+mov $105,65280
+mov $99,65280
+mov $107,65280
+mov $10,65280
+iret
+
+
+.section keyboard
+
+mov 65282,65280
+iret
+
+
+.section error
+
+mov $10,65280
+mov $71,65280
+mov $82,65280
+mov $69,65280
+mov $83,65280
+mov $75,65280
+mov $65,65280
+mov $10,65280
+
+halt
+iret
+
+
+
+.section program
+
+
+
+call ispis
+
+
+
+
+cmp $0,%r3
+jgt *12000
+halt
